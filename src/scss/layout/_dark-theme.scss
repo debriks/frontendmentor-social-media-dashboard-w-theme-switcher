@@ -1,0 +1,34 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/functions" as *;
+
+.dark {
+  background-color: $clr-bg-very-dark-blue;
+  transition: background-color 250ms;
+}
+
+.dark .switch {
+  background: $clr-dark-theme-toggle;
+}
+
+.dark .flicker {
+  transform: translateX(24px);
+  background: $clr-bg-very-dark-blue;
+}
+
+.dark .card {
+  background: $clr-card-bg;
+  cursor: pointer;
+
+  &:hover {
+    background: $clr-card-dark-hover;
+  }
+}
+
+.dark .txt-dark-theme-white {
+  color: $clr-txt-white;
+}
+
+.dark .txt-dark-theme {
+  color: $clr-txt-desaturated-blue;
+}

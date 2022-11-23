@@ -1,0 +1,95 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/functions" as *;
+
+body {
+  position: relative;
+  display: grid;
+  place-items: start;
+  width: 100%;
+  min-height: 100vh;
+  font-family: $fw-primary-font;
+  font-size: $fs-body;
+  padding: rem(30) rem(20) rem(100) rem(20);
+  transition: background-color 250ms;
+
+  @include breakpoint(large) {
+    place-content: center;
+  }
+}
+
+.grid {
+  max-width: rem(1110);
+  grid-template-columns: 1fr;
+
+  @include breakpoint(small) {
+    grid-template-columns: repeat(auto-fit, minmax(rem(250), 1fr));
+  }
+
+  @include breakpoint(medium) {
+    grid-template-columns: repeat(auto-fit, minmax(rem(200), 1fr));
+  }
+
+  @include breakpoint(large) {
+    grid-template-columns: repeat(auto-fit, minmax(rem(255), 1fr));
+  }
+}
+
+// FLEXBOX
+
+.flex {
+  display: flex;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.ai-c {
+  align-items: center;
+}
+
+.gap-3 {
+  gap: rem(3);
+}
+
+.gap-20 {
+  gap: rem(20);
+}
+
+// CARD
+
+.card {
+  background: $clr-card-bg-light;
+  border-radius: rem(6);
+  padding: rem(25) rem(20) rem(20) rem(20);
+  transition: background 250ms;
+  cursor: pointer;
+
+  &:hover {
+    background: $clr-card-light-hover;
+  }
+}
+
+// HELPER CLASSES
+
+.arrow {
+  width: rem(8);
+  height: rem(4);
+}
+
+.fw-600 {
+  font-weight: $fw-600;
+}
+
+.stats {
+  font-size: rem(12);
+}
+
+.stats--positive {
+  color: $clr-stats-up-green;
+}
+
+.stats--negative {
+  color: $clr-stats-down-red;
+}

@@ -1,0 +1,186 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/functions" as *;
+
+// HEADER
+
+.header {
+  width: 100%;
+  padding-bottom: rem(40);
+
+  @include breakpoint(small) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  h1 {
+    font-size: $fs-h1;
+    color: $clr-txt-light-very-dark-blue;
+  }
+
+  p {
+    font-size: $fs-body;
+    font-weight: 600;
+    color: $clr-txt-light-dark-grayish-blue;
+    padding-top: rem(5);
+  }
+
+  .hr {
+    background: $clr-txt-light-dark-grayish-blue;
+    margin: rem(20) 0;
+
+    @include breakpoint(small) {
+      display: none;
+    }
+  }
+
+  &__theme {
+    align-items: center;
+
+    @include breakpoint(small) {
+      align-items: flex-start;
+      gap: rem(10);
+    }
+
+    &--switch {
+      position: relative;
+      width: rem(48);
+      height: rem(24);
+      background: $clr-light-theme-toggle;
+      border-radius: rem(12);
+      cursor: pointer;
+
+      .flicker {
+        position: absolute;
+        width: rem(18);
+        height: rem(18);
+        background: $clr-bg-white;
+        border-radius: rem(9);
+        top: rem(3);
+        left: rem(3);
+        transition: transform 250ms;
+      }
+    }
+  }
+}
+
+//  FOLLOWERS STATS TOP SECTION
+
+.followers {
+  width: 100%;
+  display: grid;
+
+  &__card {
+    position: relative;
+
+    &__top {
+      position: absolute;
+      width: 100%;
+      height: rem(4);
+      border-radius: rem(6) rem(6) 0 0;
+      top: 0;
+      left: 0;
+    }
+
+    .facebook {
+      background: $clr-facebook;
+    }
+
+    .twitter {
+      background: $clr-twitter;
+    }
+
+    .instagram {
+      background: $clr-instagram;
+    }
+
+    .youtube {
+      background: $clr-youtube;
+    }
+
+    &__infos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      p {
+        font-size: $fs-small;
+        color: $clr-txt-light-dark-grayish-blue;
+      }
+
+      &--social {
+        display: flex;
+        align-items: center;
+        gap: rem(8);
+      }
+
+      &--numbers {
+        padding: rem(25);
+        text-align: center;
+
+        h2 {
+          font-size: $fs-h2;
+        }
+
+        p {
+          text-transform: uppercase;
+          letter-spacing: rem(5);
+          color: $clr-txt-light-dark-grayish-blue;
+          font-weight: $fw-400;
+        }
+      }
+
+      &--stats {
+        img {
+          width: rem(8);
+          height: rem(4);
+        }
+
+        .stats--positive {
+          color: $clr-stats-up-green;
+        }
+
+        .stats--negative {
+          color: $clr-stats-down-red;
+        }
+      }
+    }
+  }
+}
+
+//  OVERVIEW TODAY SECTION
+
+.overview {
+  width: 100%;
+
+  &__title {
+    font-size: rem(24);
+    color: $clr-txt-light-dark-grayish-blue;
+    padding: rem(40) 0 rem(20) 0;
+  }
+
+  &__stats {
+    display: grid;
+
+    &__card {
+      background: $clr-card-bg-light;
+
+      &--header {
+        padding-bottom: rem(30);
+
+        p {
+          color: $clr-txt-light-dark-grayish-blue;
+          font-weight: $fw-600;
+        }
+      }
+
+      &--stats {
+        h4 {
+          font-size: rem(32);
+        }
+      }
+    }
+  }
+}
