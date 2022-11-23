@@ -43,7 +43,7 @@ $fw-primary-font: "Inter", sans-serif;
 
 $fs-small: rem(12);
 $fs-body: rem(14);
-$fs-h1: clamp(rem(24), 2vw, rem(28));
+$fs-h1: clamp(rem(24), rem(24) + 4vw, rem(30));
 $fs-h2: rem(56);
 
 $fw-300: 300;
